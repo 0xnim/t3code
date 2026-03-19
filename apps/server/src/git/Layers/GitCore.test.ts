@@ -1962,9 +1962,7 @@ it.layer(TestLayer)("git integration", (it) => {
         yield* writeTextFile(path.join(tmp, "extra.txt"), "extra args test\n");
         yield* git(tmp, ["add", "extra.txt"]);
 
-        const { commitSha } = yield* core.commit(tmp, "test extra args", "", [
-          "--no-gpg-sign",
-        ]);
+        const { commitSha } = yield* core.commit(tmp, "test extra args", "", ["--no-gpg-sign"]);
         expect(commitSha).toBeTruthy();
 
         // Verify the commit was created with the right message

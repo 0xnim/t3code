@@ -637,8 +637,8 @@ function SettingsRouteView() {
                     spellCheck={false}
                   />
                   <span className="text-xs text-muted-foreground">
-                    Applied to app-run git commit commands only. Example:{" "}
-                    <code>--no-gpg-sign</code>. Quoted arguments are not supported yet.
+                    Applied to app-run git commit commands only. Example: <code>--no-gpg-sign</code>
+                    . Quoted arguments are not supported yet.
                   </span>
                 </label>
 
