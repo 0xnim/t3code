@@ -113,6 +113,9 @@ function SettingsRouteView() {
   const gitCommitFlagsWarning = useMemo(() => {
     const trimmed = gitCommitFlags.trim();
     if (!trimmed) return null;
+    if (/["']/.test(trimmed)) {
+      return "Quoted arguments are not supported. Use = syntax instead (e.g. --cleanup=verbatim).";
+    }
     const tokens = trimmed.split(/\s+/);
     const invalidTokens = tokens.filter((t) => !t.startsWith("-"));
     if (invalidTokens.length > 0) {
